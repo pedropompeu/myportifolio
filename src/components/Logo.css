@@ -1,24 +1,33 @@
+:root {
+    --rich-black: #031927ff;
+    --air-force-blue: #508aa8ff;
+    --viridian: #408567ff;
+    --baby-blue: #9dd1f1ff;
+    --columbia-blue: #c8e0f4ff;
+}
+/* Logo.css */
 .logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    fill: var(--rich-black);
+    padding-top: 15px;
+
 }
 
-.svg-container {
-    margin-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    border: 1px solid rgb(157, 179, 210);
+.logo-container:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do logo */
 }
-
 
 .logo-svg-pompeu {
     fill: var(--columbia-blue);
+    transition: fill 0.3s ease;
 }
+
+.logo-container:hover .logo-svg-pompeu {
+    fill: var(--air-force-blue);
+}
+
+
