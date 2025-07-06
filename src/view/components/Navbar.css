@@ -1,0 +1,111 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 1rem 20%;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0; 
+    padding: 0; 
+}
+
+.nav-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px; 
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none; /* Remove borda do botão */
+    z-index: 1000;
+}
+
+.hamburger .line {
+    width: 28px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1001; 
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #535353;
+        border-left: 2px solid var(--accent-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: transform 0.4s ease-in-out;
+        transform: translateX(100%);
+        z-index: 1000;
+        text-decoration: none;
+
+    }
+
+    .nav-links.active {
+        display: flex; 
+        transform: translateX(0); /* Desliza para dentro da tela */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem; /* Aumenta a fonte no menu mobile para facilitar o toque */
+    }
+
+    /* Animação do ícone Hambúrguer para um 'X' quando o menu está ativo */
+    .navbar .hamburger {
+        /* Garante que o hamburger fique na frente do menu ao ser clicado */
+        position: relative; 
+        right: 0px; 
+        z-index: 1001;
+    }
+
+    /* Animação das linhas do hambúrguer para formar um "X" */
+    .nav-links.active + .hamburger .line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .nav-links.active + .hamburger .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-links.active + .hamburger .line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}

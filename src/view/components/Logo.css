@@ -1,0 +1,49 @@
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+.logo-svg {
+
+    transform: scale(2.3);
+    fill: var(--accent-color);
+    transition: transform 0.3s ease, fill 0.5s ease;
+}
+
+.logo-link:hover .logo-svg {
+    transform: scale(2.5);
+    fill: var(--accent-color-hover);
+}
+
+.logo-name {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.logo-link:hover .logo-name {
+    color: var(--accent-color-hover);
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .logo-name {
+        text-decoration: none;
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
+    
+    }
+    .logo-svg {
+        transform: scale(1.5);
+    }
+    .logo-link:hover .logo-svg {
+        transform: scale(1.7);  
+    }
+
+}

@@ -1,0 +1,151 @@
+/* view/pages/Contato.css */
+.page-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.page-title {
+    color: var(--accent-color);
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Container principal com duas colunas */
+.contato-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem */
+    gap: 4rem;
+}
+
+/* Coluna do formulário */
+.contact-form-container {
+    flex: 2; /* Ocupa 2/3 do espaço */
+    min-width: 300px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--accent-color-hover);
+    background-color: #1a1a1a; /* Um pouco mais claro que o fundo */
+    color: var(--secondary-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(166, 138, 100, 0.4);
+}
+
+.submit-button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-2px);
+}
+
+
+.contact-info-container {
+    flex: 1;
+    min-width: 300px;
+    color: var(--secondary-color);
+}
+
+.contact-info-container h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contact-info-container p {
+    line-height: 1.7;
+    opacity: 0.8;
+}
+
+.contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.contact-info-list li {
+    margin-bottom: 1rem;
+}
+
+.contact-info-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info-list a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+@media(max-width: 768px) {
+    .contato-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.status-message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-message.error {
+    background-color: #dc3545;
+    color: white;
+}

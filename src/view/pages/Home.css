@@ -1,0 +1,24 @@
+.home-container {
+    min-height: calc(100vh - 75px);
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+}
+
+.home-content {
+    color: var(--secondary-color);
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+  }

@@ -1,0 +1,95 @@
+/* view/pages/SobreMim.css */
+
+/* Container principal da página, pode ser reutilizado */
+.page-container {
+    max-width: 1200px;
+    margin: 4rem auto; /* Centraliza e adiciona espaço vertical */
+    padding: 0 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Título principal da página */
+.page-title {
+    color: var(--accent-color);
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Layout de duas colunas */
+.sobre-mim-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.text-column {
+    flex: 2; /* Faz a coluna de texto ocupar 2/3 do espaço */
+    color: var(--secondary-color);
+}
+
+.text-column p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.image-column {
+    flex: 1; /* Faz a coluna de imagem ocupar 1/3 do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da imagem de perfil (se você usar uma) */
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(166, 138, 100, 0.3);
+}
+
+/* Estilo do placeholder (se não usar imagem) */
+.image-placeholder {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--accent-color), var(--accent-color-hover));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .sobre-mim-content {
+        flex-direction: column-reverse; /* Coloca a imagem em cima do texto */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+}

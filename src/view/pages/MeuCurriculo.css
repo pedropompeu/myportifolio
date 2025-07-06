@@ -1,0 +1,196 @@
+/* view/pages/MeuCurriculo.css */
+
+/* Estilos gerais da página (sem alterações) */
+.page-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.page-title {
+    color: var(--accent-color);
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.curriculo-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* --- Layout da Timeline (AJUSTADO) --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* A linha vertical da timeline */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--accent-color-hover);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a linha com mais precisão */
+}
+
+.timeline-item {
+    padding: 1rem 2rem;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box; /* Garante que padding não afete a largura */
+}
+
+/* Itens da esquerda */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 40px; /* Aumenta o espaço da linha */
+    text-align: right;
+}
+
+/* Itens da direita */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 40px; /* Aumenta o espaço da linha */
+    text-align: left;
+}
+
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border: 4px solid var(--accent-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Ponto para itens da esquerda */
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+    transform: translateX(50%);
+}
+
+/* Ponto para itens da direita */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+    transform: translateX(-50%);
+}
+
+
+.timeline-date {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+}
+
+.timeline-company {
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- Layout das Habilidades (sem alterações) --- */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background-color: var(--accent-color-hover);
+    color: var(--secondary-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+/* --- Responsividade (AJUSTADA) --- */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+        transform: translateX(0); /* Remove a transformação no mobile */
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        left: 0; /* Reseta o posicionamento de todos os itens */
+        padding-left: 50px;
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-right: 15px; /* Garante que o padding seja igual */
+        text-align: left;
+    }
+    
+    .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 20px; /* Alinha todos os pontos com a nova linha */
+        transform: translateX(-50%); /* Centraliza o ponto na linha */
+    }
+}
+
+/* Animação de entrada (sem alterações) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
