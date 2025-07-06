@@ -10,7 +10,7 @@ import Contato from './view/pages/Contato';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/portifolio-pessoal'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
