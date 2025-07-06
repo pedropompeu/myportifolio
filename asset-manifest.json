@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/portfolio-pessoal/static/css/main.2b116f45.css",
+    "main.js": "/portfolio-pessoal/static/js/main.3457d5b1.js",
+    "static/media/foto-pompeu.jpeg": "/portfolio-pessoal/static/media/foto-pompeu.f6ac6e8fb6287f9964cb.jpeg",
+    "index.html": "/portfolio-pessoal/index.html",
+    "main.2b116f45.css.map": "/portfolio-pessoal/static/css/main.2b116f45.css.map",
+    "main.3457d5b1.js.map": "/portfolio-pessoal/static/js/main.3457d5b1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b116f45.css",
+    "static/js/main.3457d5b1.js"
+  ]
+}
